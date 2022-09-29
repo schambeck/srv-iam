@@ -2,6 +2,8 @@ version: '3.9'
 services:
   web:
     image: srv-iam:latest
+    depends_on:
+      - db
     networks:
       - schambeck-net
     environment:
