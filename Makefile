@@ -52,7 +52,7 @@ docker-build:
 docker-run:
 	docker run -d \
 		--restart=always \
-		--net schambeck-bridge \
+		--net schambeck-net \
 		--name ${APP} \
 	  	--env SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/iam \
 		--env SPRING_DATASOURCE_USERNAME=root \
@@ -63,7 +63,7 @@ docker-run:
 docker-run-db:
 	docker run -d \
 		--restart=always \
-		--net schambeck-bridge \
+		--net schambeck-net \
 		--name db \
 	  	--env MYSQL_ROOT_PASSWORD=example \
 	  	--env MYSQL_DATABASE=iam \
