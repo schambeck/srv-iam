@@ -1,6 +1,6 @@
 APP = srv-iam
 VERSION = 1.0.0
-JAR = ${APP}-${VERSION}.jar
+JAR = iam-${VERSION}.jar
 TARGET_JAR = build/libs/${JAR}
 #JAVA_OPTS = -Dserver.port=0
 DOCKER_IMAGE = ${APP}:latest
