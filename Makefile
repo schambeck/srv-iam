@@ -38,7 +38,7 @@ run:
 
 # Docker
 
-dist-docker-build-deploy: dist docker-build stack-app-deploy
+dist-docker-build-deploy: dist docker-build stack-deploy
 
 dist-docker-build: dist docker-build
 
