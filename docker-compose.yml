@@ -30,6 +30,13 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=example
       - MYSQL_DATABASE=iam
+  adminer:
+    image: adminer
+    restart: always
+    networks:
+      - schambeck-net
+    ports:
+      - "8888:8080"
 networks:
   schambeck-net:
     driver: bridge
