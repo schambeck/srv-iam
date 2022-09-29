@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  web:
+    image: srv-iam:latest
+    networks:
+      - schambeck-net
+    environment:
+      - SERVER_PORT=80
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/iam
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 384M
+        reservations:
+          memory: 256M
+  db:
+    image: 'mysql'
+    networks:
+      schambeck-net:
+        aliases:
+          - db
+    environment:
+      - POSTGRES_DB=iam
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 64M
+networks:
+  schambeck-net:
+    driver: bridge
