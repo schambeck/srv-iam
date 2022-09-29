@@ -6,7 +6,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Base64;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Slf4j
 @Service
@@ -19,6 +22,11 @@ public class UserService {
         log.info("Create: {}", user);
         cryptPassword(user);
         return repository.save(user);
+    }
+
+    public List<User> list() {
+        return StreamSupport.stream(repository.findAll().spliterator(), false)
+            .collect(Collectors.toList());
     }
 
     private void cryptPassword(User user) {

@@ -111,3 +111,13 @@ stack-deploy:
 
 service-logs:
 	docker service logs ${APP}_web -f
+
+# Curl
+
+curl-user-create:
+	curl --location --request POST 'http://localhost:8080/users' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{ "username": "user01", "password": "password1", "email": "user01@domain.com", "firstName": "User", "lastName": "Foo" }'
+
+curl-user-list:
+	curl --location --request GET 'http://localhost:8080/users'
