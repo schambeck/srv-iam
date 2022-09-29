@@ -14,7 +14,7 @@ class IdGeneratorConfig {
   BeforeConvertCallback<User> beforeSaveCallback() {
     return (user) -> {
       if (user.getId() == null) {
-        user.setId(UUID.randomUUID());
+        user.setId(UUID.randomUUID().toString());
       }
       return user;
     };
