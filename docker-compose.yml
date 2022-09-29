@@ -18,6 +18,8 @@ services:
           memory: 384M
         reservations:
           memory: 256M
+    ports:
+      - "8080:8080"
   db:
     image: 'mysql'
     networks:
