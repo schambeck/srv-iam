@@ -23,14 +23,8 @@ services:
         aliases:
           - db
     environment:
-      MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: iam
-    deploy:
-      resources:
-        limits:
-          memory: 128M
-        reservations:
-          memory: 64M
+      - MYSQL_ROOT_PASSWORD=example
+      - MYSQL_DATABASE=iam
 networks:
   schambeck-net:
     driver: bridge

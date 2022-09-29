@@ -54,7 +54,7 @@ docker-run:
 		--restart=always \
 		--net schambeck-bridge \
 		--name ${APP} \
-	  	--env SPRING_DATASOURCE_URL=jdbc:mysql://db:5432/iam \
+	  	--env SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/iam \
 		--env SPRING_DATASOURCE_USERNAME=root \
 		--env SPRING_DATASOURCE_PASSWORD=example \
 		--publish 8080:8080 \
