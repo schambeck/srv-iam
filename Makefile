@@ -51,9 +51,9 @@ docker-run:
 		--restart=always \
 		--net schambeck-bridge \
 		--name ${APP} \
-	  	--env SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/iam \
-		--env SPRING_DATASOURCE_USERNAME=postgres \
-		--env SPRING_DATASOURCE_PASSWORD=postgres \
+	  	--env SPRING_DATASOURCE_URL=jdbc:mysql://db:5432/iam \
+		--env SPRING_DATASOURCE_USERNAME=root \
+		--env SPRING_DATASOURCE_PASSWORD=example \
 		--publish 8080:8080 \
 		${DOCKER_IMAGE}
 
