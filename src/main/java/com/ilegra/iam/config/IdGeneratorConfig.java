@@ -7,7 +7,7 @@ import org.springframework.data.relational.core.mapping.event.BeforeConvertCallb
 
 import java.util.UUID;
 
-@Configuration
+//@Configuration
 class IdGeneratorConfig {
 
   @Bean
