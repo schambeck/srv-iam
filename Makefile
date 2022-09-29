@@ -63,6 +63,7 @@ docker-run-db:
 		--net schambeck-bridge \
 		--name db \
 	  	--env MYSQL_ROOT_PASSWORD=example \
+	  	--env MYSQL_DATABASE=iam \
 		--publish 3306:3306 \
 		mysql
 

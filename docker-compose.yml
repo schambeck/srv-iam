@@ -5,10 +5,10 @@ services:
     networks:
       - schambeck-net
     environment:
-      - SERVER_PORT=80
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/iam
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SERVER_PORT=8080
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:5432/iam
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=example
     deploy:
       replicas: 1
       resources:
@@ -23,9 +23,8 @@ services:
         aliases:
           - db
     environment:
-      - POSTGRES_DB=iam
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: iam
     deploy:
       resources:
         limits:
