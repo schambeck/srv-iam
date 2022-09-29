@@ -57,6 +57,17 @@ docker-run:
 		--publish 8080:8080 \
 		${DOCKER_IMAGE}
 
+docker-run-db:
+	docker run -d \
+		--restart=always \
+		--net schambeck-bridge \
+		--name db \
+	  	--env SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/iam \
+		--env SPRING_DATASOURCE_USERNAME=postgres \
+		--env SPRING_DATASOURCE_PASSWORD=postgres \
+		--publish 8080:8080 \
+		${DOCKER_IMAGE}
+
 --rm-docker-image:
 	docker rmi ${DOCKER_IMAGE}
 
