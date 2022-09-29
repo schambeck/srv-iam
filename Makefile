@@ -4,6 +4,9 @@ JAR = ${APP}-${VERSION}.jar
 TARGET_JAR = build/libs/${JAR}
 #JAVA_OPTS = -Dserver.port=0
 DOCKER_IMAGE = ${APP}:latest
+DOCKER_CONF = Dockerfile
+COMPOSE_CONF = docker-compose.yml
+STACK_CONF = docker-stack.yml
 
 # Gradle
 
